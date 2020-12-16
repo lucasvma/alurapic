@@ -3,6 +3,6 @@ import { VMessageComponent } from './vmessage.component';
 
 @NgModule({
     declarations: [ VMessageComponent ],
-    exports: [ VMessageComponent ]
+    exports: [ VMessageComponent]
 })
 export class VMessageModule { }

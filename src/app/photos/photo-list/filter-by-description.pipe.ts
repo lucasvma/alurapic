@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { Photo } from '../photo/photo';
 
-@Pipe({ name: 'filterByDescription' })
+@Pipe({ name: 'filterByDescription'})
 export class FilterByDescription implements PipeTransform {
 
     transform(photos: Photo[], descriptionQuery: string) {
@@ -10,12 +10,13 @@ export class FilterByDescription implements PipeTransform {
             .trim()
             .toLowerCase();
 
-        return descriptionQuery
-         ? photos.filter(
-             photo => photo
-                        .description
-                        .toLowerCase()
-                        .includes(descriptionQuery)) 
-         : photos;
+        if(descriptionQuery) {
+            return photos.filter(photo => 
+                photo.description.toLowerCase().includes(descriptionQuery)
+            );
+        } else {
+            return photos;
+        }
     }
+
 }

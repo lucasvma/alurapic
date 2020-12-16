@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { Photo } from '../photo/photo';
 import { PhotoService } from '../photo/photo.service';
+import { Photo } from '../photo/photo';
 
-@Injectable({ providedIn: 'root' })
-export class PhotoListResolver implements Resolve<Observable<Photo[]>> {
+@Injectable({ providedIn: 'root'})
+export class PhotoListResolver implements Resolve<Observable<Photo[]>>{
 
     constructor(private service: PhotoService) {}
 

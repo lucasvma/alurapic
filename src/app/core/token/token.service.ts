@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 
 const KEY = 'authToken';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable({ providedIn: 'root'})
 export class TokenService {
 
     hasToken() {
         return !!this.getToken();
     }
 
-    setToken(token: string) {
+    setToken(token) {
         window.localStorage.setItem(KEY, token);
     }
 
